@@ -8,7 +8,7 @@ Además, con ayuda del generador se señales obtuvimos una señal biológica, la
 # PARTE A
 ## Convolución de Señales 
 En esta sección realizamos la convolución entre una señal formada con los dígitos de la cédula de cada estudiante, y un sistema definido a partir de los dígitos de código universitarios.<br>
-<img width="356" height="271" alt="image" src="https://github.com/user-attachments/assets/432d7875-990d-4112-8320-89ed2d6c7234" /><br>
+ <img width="380" height="287" alt="image" src="https://github.com/user-attachments/assets/b142d1b2-1d55-45f4-b9c7-4abe2252843c" /> <br>
 
 1. primero se realizo la convolución de manera manual, con los metodos aprendidos en la clase teorica.<br>
 2.	Luego se representó gráficamente la señal obtenida de forma manual.<br>
