@@ -25,11 +25,45 @@ Cedula=1014187867 <br>
 
 3. Phyton<br>
 
-   <img width="238" height="197" alt="image" src="https://github.com/user-attachments/assets/f5846fdb-6ccc-4fb8-88b5-54512a124f1d" /> <br><br>
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+ --- Datos Manu---
+h = [5,6,0,0,8,7,4]                # sistema
+x = [1,0,1,4,1,8,7,8,6,7]          # entrada
+
+ --- Convolución ---
+y = np.convolve(x, h)
+print("y[n] =", y.tolist())
+
+ --- Gráfica tipo stem ---
+n = np.arange(len(y))
+plt.figure(figsize=(10,4))
+
+ Capturamos los objetos del stem
+markerline, stemlines, baseline = plt.stem(n, y)
+```
+ <br><br>
 
    este código calcula la convolución entre una señal de entrada (cedula) y un sistema (Codigo), imprime el resultado y lo grafica como señal discreta tipo stem. <br>
    
-   <img width="269" height="167" alt="image" src="https://github.com/user-attachments/assets/df911686-3531-409b-9ba4-227fde126699" /> <br>
+   ```
+   Cambiamos los colores
+plt.setp(markerline, color='rosybrown')  # puntos
+plt.setp(stemlines, color='rosybrown')   # palitos
+plt.setp(baseline, color='rosybrown')    # línea base
+
+plt.title('Convolución y[n] = x[n] * h[n]')
+plt.xlabel('n')
+plt.ylabel('y[n]')
+plt.grid(True)
+plt.show()
+
+ --- Tabla secuencial ---
+for i, val in enumerate(y):
+    print(f"n={i}, y[{i}]={val}")
+  ```
    
    este bloque permite personalizar la gráfica (colores, título, ejes, cuadrícula) y genera una tabla con los valores de la señal resultante.<br>
    
@@ -48,7 +82,40 @@ Cedula=1014187867 <br>
    <img width="272" height="351" alt="image" src="https://github.com/user-attachments/assets/e0b83d80-4f06-4b7e-b13b-73cf8b1e720a" /><br>
 
    3. Phyton<br>
-   <img width="277" height="328" alt="image" src="https://github.com/user-attachments/assets/fee28f8e-d81d-42de-8e99-fcbd4b3c2af8" /><br>
+   ```
+import numpy as np
+import matplotlib.pyplot as plt
+
+--- Datos Aleja ---
+h = [5,6,0,0,8,5,4]                # sistema
+x = [1,0,7,8,3,6,7,2,2,9]          # entrada
+
+ --- Convolución ---
+y = np.convolve(x, h)
+print("y[n] =", y.tolist())
+
+ --- Gráfica  ---
+n = np.arange(len(y))
+plt.figure(figsize=(10,4))
+
+ Capturamos los objetos del stem
+markerline, stemlines, baseline = plt.stem(n, y)
+
+ Cambiamos los colores
+plt.setp(markerline, color='aquamarine')  # puntos
+plt.setp(stemlines, color='aquamarine')   # palitos
+plt.setp(baseline, color='aquamarine')    # línea base
+
+plt.title('Convolución y[n] = x[n] * h[n]')
+plt.xlabel('n')
+plt.ylabel('y[n]')
+plt.grid(True)
+plt.show()
+
+--- Tabla secuencial ---
+for i, val in enumerate(y):
+    print(f"n={i}, y[{i}]={val}")
+```
    <img width="551" height="291" alt="image" src="https://github.com/user-attachments/assets/6545fc3e-3ff1-4f90-b701-7915d707b23d" /> <br>
    <img width="94" height="173" alt="image" src="https://github.com/user-attachments/assets/9cc8a3f2-8b3a-4cd6-a21d-9c859db84cb4" /> <br>
 
@@ -63,8 +130,41 @@ Cedula= 1007467467<br>
    <img width="278" height="391" alt="image" src="https://github.com/user-attachments/assets/a494a268-42b8-4c5c-9a75-5d5d3296f3fe" /><br>
    
    3. Phyton<br>
-   <img width="266" height="321" alt="image" src="https://github.com/user-attachments/assets/f63db94f-3be0-477b-b8fe-3c5fcec245e1" /><br>
-   <img width="523" height="296" alt="image" src="https://github.com/user-attachments/assets/6d0b92f2-3411-49f3-85d7-10f37c754231" /><br>
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+--- Datos Vale ---
+h = [5,6,0,0,8,6,7]                # sistema
+x = [1,0,0,7,4,6,7,4,6,7]          # entrada
+
+ --- Convolución ---
+y = np.convolve(x, h)
+print("y[n] =", y.tolist())
+
+ --- Gráfica tipo stem ---
+n = np.arange(len(y))
+plt.figure(figsize=(10,4))
+
+ Capturamos los objetos del stem
+markerline, stemlines, baseline = plt.stem(n, y)
+
+ Cambiamos los colores
+plt.setp(markerline, color='PaleGreen')  # puntos
+plt.setp(stemlines, color='PaleGreen')   # palitos
+plt.setp(baseline, color='PaleGreen')    # línea base
+
+plt.title('Convolución y[n] = x[n] * h[n]')
+plt.xlabel('n')
+plt.ylabel('y[n]')
+plt.grid(True)
+plt.show()
+
+ --- Tabla secuencial ---
+for i, val in enumerate(y):
+    print(f"n={i}, y[{i}]={val}")
+```
+   <img width="523" height="241" alt="image" src="https://github.com/user-attachments/assets/c2bd51fc-8aa6-4959-8a98-8f10e394489b" /><br>
    <img width="89" height="170" alt="image" src="https://github.com/user-attachments/assets/04b8d004-d85c-485a-a906-0e6f8da2bb90" /> <br>
 
    # PARTE B
