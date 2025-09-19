@@ -173,13 +173,100 @@ for i, val in enumerate(y):
    <img width="364" height="268" alt="image" src="https://github.com/user-attachments/assets/464b8de7-e64c-4327-87e6-7f9af36d78cf" /><br>
 
    ### Codigo
-   <img width="258" height="179" alt="image" src="https://github.com/user-attachments/assets/775ca907-0f04-4e02-a7cd-18ee52abc630" /><br>
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+ Paso 1: Definir parámetros y n
+Ts = 1.25e-3                # periodo de muestreo (s)
+n = np.arange(0,9)          # n = 0..8
+
+ Paso 2: Definir señales
+x1 = np.cos(2*np.pi*100*n*Ts)   # cos(pi/4 * n)
+x2 = np.sin(2*np.pi*100*n*Ts)   # sin(pi/4 * n)
+
+ Mostrar valores
+print("n =", n.tolist())
+print("x1 =", np.round(x1,4).tolist())
+print("x2 =", np.round(x2,4).tolist())
+```
+<br>
    este bloque define las señales de entrada (coseno y seno), las evalúa en los primeros 9 puntos y muestra sus valores.<br>
-   <img width="342" height="203" alt="image" src="https://github.com/user-attachments/assets/7f0dac22-ab7a-4f78-87ed-3b1d670c6683" /><br>
+ 
+   ```
+    Paso 3: Calcular correlación cruzada
+corr = np.correlate(x1, x2, mode='full')
+lags = np.arange(-len(x1)+1, len(x1))  # lags de -(N-1) a +(N-1)
+
+ Normalizar (opcional)
+corr_norm = corr / np.max(np.abs(corr))
+
+Mostrar correlación y lags
+print("lags =", lags.tolist())
+print("corr =", np.round(corr,4).tolist())
+print("corr_norm =", np.round(corr_norm,4).tolist())
+
+Paso 4: Encontrar el lag del pico
+peak_idx = np.argmax(np.abs(corr))
+peak_lag = lags[peak_idx]
+peak_value = corr[peak_idx]
+print(f"Pico absoluto en lag = {peak_lag}, valor = {peak_value:.4f}")
+  ```
+  <br>
    Este bloque calcula la correlación cruzada de las dos señales, obtiene todos los valores de desplazamiento posibles, normaliza los resultados, los muestra y además identifica el pico principal, que indica dónde hay mayor similitud entre las señales.<br>
-   <img width="245" height="263" alt="image" src="https://github.com/user-attachments/assets/e3f184fb-b5bd-46fa-8f43-99e0216bd833" /><br>
+
+  ```
+ Paso 5: Graficar señales y correlación
+
+ Gráfica x1
+plt.figure(figsize=(8,3))
+markerline, stemlines, baseline = plt.stem(n, x1)
+plt.setp(markerline, color='plum')
+plt.setp(stemlines, color='plum')
+plt.setp(baseline, color='plum')
+plt.title('x1[n] = cos(2π·100·n·Ts)')
+plt.xlabel('n'); plt.ylabel('x1[n]')
+plt.grid(True)
+plt.show()
+
+ Gráfica x2
+plt.figure(figsize=(8,3))
+markerline, stemlines, baseline = plt.stem(n, x2)
+plt.setp(markerline, color='plum')
+plt.setp(stemlines, color='plum')
+plt.setp(baseline, color='plum')
+plt.title('x2[n] = sin(2π·100·n·Ts)')
+plt.xlabel('n'); plt.ylabel('x2[n]')
+plt.grid(True)
+plt.show()
+  ```
+  <br>
    Este bloque genera dos gráficas separadas, una para la señal coseno y otra para la señal seno, ambas en formato discreto (stem), con títulos y ejes identificados.<br>
-   <img width="296" height="244" alt="image" src="https://github.com/user-attachments/assets/b17b4d14-5e46-49fb-a66d-649cea745ff5" /><br>
+
+```
+Gráfica correlación (no normalizada)
+plt.figure(figsize=(8,3))
+markerline, stemlines, baseline = plt.stem(lags, corr)
+plt.setp(markerline, color='plum')
+plt.setp(stemlines, color='plum')
+plt.setp(baseline, color='plum')
+plt.title('Correlación cruzada r_{x1,x2}[lag]')
+plt.xlabel('lag'); plt.ylabel('r[lag]')
+plt.grid(True)
+plt.show()
+
+ Gráfica correlación normalizada
+plt.figure(figsize=(8,3))
+markerline, stemlines, baseline = plt.stem(lags, corr_norm)
+plt.setp(markerline, color='plum')
+plt.setp(stemlines, color='plum')
+plt.setp(baseline, color='plum')
+plt.title('Correlación cruzada normalizada')
+plt.xlabel('lag'); plt.ylabel('r_norm[lag]')
+plt.grid(True)
+plt.show()
+```
+   <br>
 
    ## Resultado
    <img width="637" height="73" alt="image" src="https://github.com/user-attachments/assets/d4424f0d-2a70-4920-80a7-d0bbb19796a7" /><br>
