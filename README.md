@@ -1,0 +1,115 @@
+# LABORATORIO-2
+
+# DESCRIPCIÓN
+En este repositorio encontraremos el analisis de la practica 2, donde se realizó la convolución, la correlación y la Transformada de Fourier para trabajar con diferentes señales. Inicialmente se desarrolló el ejercicio de manera manual y luego se trabajó en  Python para entender cómo se comportan las señales cuando pasan por un sistema.  <br>
+
+Además, con ayuda del generador se señales obtuvimos una señal biológica, la digitalizamos y analizamos sus comportamiento en el tiempo como en la frecuencia. Con el objetivo de observar de una manera más clara cómo se pueden comparar señales y también como cambia su información al analizarlas en otro dominio. Esta práctica permitió integrar la teoría y la programación y entender cómo se procesan y analizan señales tanto en el tiempo como en la frecuencia.
+
+# PARTE A
+## Convolución de Señales 
+En esta sección realizamos la convolución entre una señal formada con los dígitos de la cédula de cada estudiante, y un sistema definido a partir de los dígitos de código universitarios.<br>
+<img width="356" height="271" alt="image" src="https://github.com/user-attachments/assets/432d7875-990d-4112-8320-89ed2d6c7234" /><br>
+
+1. primero se realizo la convolución de manera manual, con los metodos aprendidos en la clase teorica.<br>
+2.	Luego se representó gráficamente la señal obtenida de forma manual.<br>
+3. Posteriormente, se programó la convolución en Python, verificando que el resultado coincidiera con el cálculo manual y se generaron las gráficas en Python para comparar y confirmar los resultados.<br>
+### Manuela Mancera Herrera
+Codigo= 5600874<br>
+Cedula=1014187867 <br>
+
+1.Convolución Manual <br>
+  <img width="361" height="352" alt="image" src="https://github.com/user-attachments/assets/aeb78253-ce68-40e2-bd6e-6402411d470d" /><br>
+
+2.Grafica Manual<br>
+    <img width="283" height="348" alt="image" src="https://github.com/user-attachments/assets/76bc5b58-999e-426f-adad-e50666822c93" /> <br>
+
+3. Phyton<br>
+
+   <img width="238" height="197" alt="image" src="https://github.com/user-attachments/assets/f5846fdb-6ccc-4fb8-88b5-54512a124f1d" /> <br><br>
+
+   este código calcula la convolución entre una señal de entrada (cedula) y un sistema (Codigo), imprime el resultado y lo grafica como señal discreta tipo stem. <br>
+   
+   <img width="269" height="167" alt="image" src="https://github.com/user-attachments/assets/df911686-3531-409b-9ba4-227fde126699" /> <br>
+   
+   este bloque permite personalizar la gráfica (colores, título, ejes, cuadrícula) y genera una tabla con los valores de la señal resultante.<br>
+   
+   <img width="523" height="239" alt="image" src="https://github.com/user-attachments/assets/16c5497f-962d-4e46-aeb7-fcd1f08d5e7b" /> <br>
+   <img width="86" height="170" alt="image" src="https://github.com/user-attachments/assets/ec5c37d0-58c7-4516-abde-6345429311c9" /><br>
+   Aca obtenemos nuestra señal convolucionada y la grafica, donde podemos confirmar que son identicas, es decir los calculos manuales son correctos. <br>
+
+   ## Alejandra Martinez Luque
+   Codigo=5600854 <br>
+   Cedula= 1078367229<br>
+
+   1.Convolución Manual <br>
+  <img width="224" height="280" alt="image" src="https://github.com/user-attachments/assets/99085e2b-4711-4186-908f-85f379b58684" /> <br>
+
+   2.Grafica Manual<br>
+   <img width="272" height="351" alt="image" src="https://github.com/user-attachments/assets/e0b83d80-4f06-4b7e-b13b-73cf8b1e720a" /><br>
+
+   3. Phyton<br>
+   <img width="277" height="328" alt="image" src="https://github.com/user-attachments/assets/fee28f8e-d81d-42de-8e99-fcbd4b3c2af8" /><br>
+   <img width="551" height="291" alt="image" src="https://github.com/user-attachments/assets/6545fc3e-3ff1-4f90-b701-7915d707b23d" /> <br>
+   <img width="94" height="173" alt="image" src="https://github.com/user-attachments/assets/9cc8a3f2-8b3a-4cd6-a21d-9c859db84cb4" /> <br>
+
+## Valentina Gomez Fandiño
+codigo=5600867<br>
+Cedula= 1007467467<br>
+   1.Convolución Manual <br>
+   
+   <img width="215" height="269" alt="image" src="https://github.com/user-attachments/assets/bf628c23-2bd7-431c-bc21-0fa2cbbbcdbd" /> <br>
+   2.Grafica Manual<br>
+   
+   <img width="278" height="391" alt="image" src="https://github.com/user-attachments/assets/a494a268-42b8-4c5c-9a75-5d5d3296f3fe" /><br>
+   
+   3. Phyton<br>
+   <img width="266" height="321" alt="image" src="https://github.com/user-attachments/assets/f63db94f-3be0-477b-b8fe-3c5fcec245e1" /><br>
+   <img width="523" height="296" alt="image" src="https://github.com/user-attachments/assets/6d0b92f2-3411-49f3-85d7-10f37c754231" /><br>
+   <img width="89" height="170" alt="image" src="https://github.com/user-attachments/assets/04b8d004-d85c-485a-a906-0e6f8da2bb90" /> <br>
+
+   # PARTE B
+   ## Correlación de señales
+   En la Parte B de la práctica utilizamos dos señales periódicas, un coseno y un seno, para comprender cómo funciona la correlación cruzada. Esta operación nos ayuda a comparar dos señales y ver qué tanta similitud tiene o cómo se relacionan entre sí.<br> 
+   <img width="364" height="268" alt="image" src="https://github.com/user-attachments/assets/464b8de7-e64c-4327-87e6-7f9af36d78cf" /><br>
+
+   ### Codigo
+   <img width="258" height="179" alt="image" src="https://github.com/user-attachments/assets/775ca907-0f04-4e02-a7cd-18ee52abc630" /><br>
+   este bloque define las señales de entrada (coseno y seno), las evalúa en los primeros 9 puntos y muestra sus valores.<br>
+   <img width="342" height="203" alt="image" src="https://github.com/user-attachments/assets/7f0dac22-ab7a-4f78-87ed-3b1d670c6683" /><br>
+   Este bloque calcula la correlación cruzada de las dos señales, obtiene todos los valores de desplazamiento posibles, normaliza los resultados, los muestra y además identifica el pico principal, que indica dónde hay mayor similitud entre las señales.<br>
+   <img width="245" height="263" alt="image" src="https://github.com/user-attachments/assets/e3f184fb-b5bd-46fa-8f43-99e0216bd833" /><br>
+   Este bloque genera dos gráficas separadas, una para la señal coseno y otra para la señal seno, ambas en formato discreto (stem), con títulos y ejes identificados.<br>
+   <img width="296" height="244" alt="image" src="https://github.com/user-attachments/assets/b17b4d14-5e46-49fb-a66d-649cea745ff5" /><br>
+
+   ## Resultado
+   <img width="637" height="73" alt="image" src="https://github.com/user-attachments/assets/d4424f0d-2a70-4920-80a7-d0bbb19796a7" /><br>
+   <img width="440" height="184" alt="image" src="https://github.com/user-attachments/assets/f30ec381-4711-4747-8705-1d324f5c55ab" /><br>
+   <img width="454" height="179" alt="image" src="https://github.com/user-attachments/assets/912a0afd-a04c-48f1-b129-af969b52d644" /><br>
+   <img width="429" height="185" alt="image" src="https://github.com/user-attachments/assets/099bc8b2-8944-4024-82ca-ca71b52a0b26" /><br>
+   <img width="454" height="182" alt="image" src="https://github.com/user-attachments/assets/bac8e7af-fb9e-404d-9bba-49676791fc35" /><br>
+
+   Al analizar las gráficas de la correlación se observa que el coseno y el seno no son iguales, pero sí tienen una relación clara cuando una señal se desplaza respecto a la otra. El pico más grande aparece en el lag 2 y con valor negativo, lo que confirma que están desfasadas. En la gráfica normalizada se ve mejor esta relación porque los valores están entre -1 y 1. En conclusión, la correlación nos permitió entender que aunque las señales no coinciden directamente, sí guardan una similitud marcada por el desfase que tienen. <br>
+   
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+   
+
+
+   
+
+
+
+
