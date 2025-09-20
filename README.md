@@ -1,3 +1,4 @@
+Codigo :https://colab.research.google.com/drive/1DL1DXChiE5t4KtSDhACU42GRzzz_fLNJ?usp=sharing
 # LABORATORIO-2
 
 # DESCRIPCIÓN
