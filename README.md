@@ -170,7 +170,7 @@ for i, val in enumerate(y):
    # PARTE B
    ## Correlación de señales
    En la Parte B de la práctica utilizamos dos señales periódicas, un coseno y un seno, para comprender cómo funciona la correlación cruzada. Esta operación nos ayuda a comparar dos señales y ver qué tanta similitud tiene o cómo se relacionan entre sí.<br> 
-   <img width="364" height="268" alt="image" src="https://github.com/user-attachments/assets/464b8de7-e64c-4327-87e6-7f9af36d78cf" /><br>
+   <img width="437" height="323" alt="image" src="https://github.com/user-attachments/assets/40ca7ee7-a36a-4d19-bc51-cb5f1d229fab" /> <br>
 
    ### Codigo
 ```
