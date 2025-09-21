@@ -2,7 +2,7 @@ Codigo :https://colab.research.google.com/drive/1DL1DXChiE5t4KtSDhACU42GRzzz_fLN
 # LABORATORIO-2
 
 # DESCRIPCIÓN
-En este repositorio encontraremos el analisis de la practica 2, donde se realizó la convolución, la correlación y la Transformada de Fourier para trabajar con diferentes señales. Inicialmente se desarrolló el ejercicio de manera manual y luego se trabajó en  Python para entender cómo se comportan las señales cuando pasan por un sistema.  <br>
+En este repositorio encontraremos el analisis de la practica 2, donde se realizó la convolución, la correlación y la Transformada de Fourier para trabajar con diferentes señales. Inicialmente se desarrolló el ejercicio de manera manual y luego se trabajó en Python para entender cómo se comportan las señales cuando pasan por un sistema.  <br>
 
 Además, con ayuda del generador se señales obtuvimos una señal biológica, la digitalizamos y analizamos sus comportamiento en el tiempo como en la frecuencia. Con el objetivo de observar de una manera más clara cómo se pueden comparar señales y también como cambia su información al analizarlas en otro dominio. Esta práctica permitió integrar la teoría y la programación y entender cómo se procesan y analizan señales tanto en el tiempo como en la frecuencia.
  
@@ -277,6 +277,10 @@ plt.show()
    <img width="454" height="182" alt="image" src="https://github.com/user-attachments/assets/bac8e7af-fb9e-404d-9bba-49676791fc35" /><br>
 
    Al analizar las gráficas de la correlación se observa que el coseno y el seno no son iguales, pero sí tienen una relación clara cuando una señal se desplaza respecto a la otra. El pico más grande aparece en el lag 2 y con valor negativo, lo que confirma que están desfasadas. En la gráfica normalizada se ve mejor esta relación porque los valores están entre -1 y 1. En conclusión, la correlación nos permitió entender que aunque las señales no coinciden directamente, sí guardan una similitud marcada por el desfase que tienen. <br>
+   # PARTE C
+   Por ultimo el objetivo de la parte C es caracterizar una señal digitalizada tanto en el dominio del tiempo como en el de la frecuencia, aplicando técnicas de procesamiento digital de señales (DSP). El análisis temporal permite observar la forma de onda y su comportamiento dinámico, mientras que el análisis frecuencial permite identificar los componentes espectrales y la distribución de energía de la señal.
+   
+   
    
 
 
