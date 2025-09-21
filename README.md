@@ -308,12 +308,101 @@ plt.show()
 Al obtener los datos se hizo la  graficación de la señal en el dominio del tiempo, representando el tiempo en el eje horizontal y el voltaje en el eje vertical. La curva fue visualizada en color azul pastel, lo que permitió observar de manera clara las oscilaciones, amplitud y comportamiento general de la señal digitalizada.
 
 <img width="749" height="731" alt="image" src="https://github.com/user-attachments/assets/32d9f134-f821-4744-8a7d-b9dcff4a95fe" /><br>
+  # CARACTERIZACIÓN TEMPORAL 
+En esta parte del código se cargó la señal desde el archivo .csv, se extrajeron las columnas de tiempo y voltaje y se verificó la correcta lectura de los datos con head() y columns. Posteriormente, la señal fue representada en el dominio temporal mediante una gráfica en color fucsia, lo que permitió observar su comportamiento inicial y confirmar que estaba lista para los análisis posteriores.
+ ```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
+# 1. Cargar la señal
+df = pd.read_csv("/content/drive/MyDrive/senal_daq_400fm.csv")
+# 2. Extraer datos
+t = df["Tiempo (s)"].values
+x = df["Voltaje (V)"].values   # Cambia a "Voltaje (V)" si tu archivo está en voltios
 
+print(df.head())      # muestra las primeras filas
+print(df.columns)     # muestra los nombres de columnas
 
-   
-   
-   
+# Graficar señal en fucsia
+plt.plot(df['Tiempo (s)'], df['Voltaje (V)'], color='#FF00FF')
+plt.title("Señal digitalizada ")
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Voltaje (V)")
+plt.grid()
+plt.show()
+```
+## FRECUENCIA DE MUESTREO 
+En esta sección también se calculó la frecuencia de muestreo a partir de la diferencia entre dos muestras consecutivas de tiempo. Esto es esencial ya que permitió conocer con precisión la tasa a la cual fue digitalizada la señal, información necesaria para aplicar correctamente la Transformada de Fourier y realizar el análisis en el dominio de la frecuencia.
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+ ```
+# 3. Calcular frecuencia de muestreo
+dt = t[1] - t[0]   # diferencia entre muestras
+fs = 1 / dt        # frecuencia de muestreo
+N = len(x)         # número de muestras
+```
+ # TRANSFORMADA DE FOURIER
+ Posteriormente, se aplicó la Transformada Rápida de Fourier (FFT) con el fin de pasar la señal del dominio del tiempo al dominio de la frecuencia. Este procedimiento permite identificar los componentes espectrales que conforman la señal y reconocer qué frecuencias predominan en ella. En este caso, el espectro de magnitud reveló los picos correspondientes a las frecuencias más significativas.
+```
+ # Transformada de Fourier
+X = np.fft.fft(x) / N
+freqs = np.fft.fftfreq(N, d=dt)
+PSD = (1/(fs*N)) * (np.abs(X)**2)
+PSD[1:-1] *= 2
+
+# Nos quedamos solo con la mitad positiva
+mask = freqs >= 0
+freqs = freqs[mask]
+X = X[mask]
+X_mag = np.abs(X)
+PSD = PSD[mask]   # ✅ corrección para evitar error de dimensiones
+
+# 5. Estadísticos en el dominio de la frecuencia
+PSD_norm = PSD / np.sum(PSD)  # normalizamos para usarlo como distribución
+f_mean = np.sum(freqs * PSD_norm)
+f_median = freqs[np.cumsum(PSD_norm) >= 0.5][0]
+f_std = np.sqrt(np.sum(((freqs - f_mean)**2) * PSD_norm))
+
+# 6. Graficar
+## a) Transformada de la señal en fucsia
+plt.figure(figsize=(10,4))
+plt.plot(freqs, X_mag, color='#FF00FF')
+plt.title("Transformada de Fourier (Magnitud)")
+plt.xlabel("Frecuencia [Hz]")
+plt.ylabel("Amplitud [V]")
+plt.grid()
+plt.show()
+```
+# Densidad espectral de potencia
+La densidad espectral de potencia (PSD) fue calculada a partir de la transformada de Fourier, con el fin de conocer cómo se distribuye la potencia de la señal entre las distintas frecuencias. Este análisis permite observar en qué rango se concentra la mayor energía de la señal, lo cual resulta esencial en aplicaciones de filtrado o caracterización espectral.
+```
+# Desidad espectral de potencia
+PSD = (1/(fs*N)) * (np.abs(X)**2)
+PSD[1:-1] *= 2
+
+## b) Densidad espectral de potencia en fucsia
+plt.figure(figsize=(10,4))
+plt.semilogy(freqs, PSD, color='#FF00FF')
+plt.title("Densidad Espectral de Potencia (PSD)")
+plt.xlabel("Frecuencia [Hz]")
+plt.ylabel("PSD [V^2/Hz]")
+plt.grid()
+plt.show()
+```
+# HISTOGRAMA DE FRECUENCIA
+A partir de la normalización de la PSD se construyó un histograma de frecuencias, el cual muestra la probabilidad de aparición de los distintos componentes espectrales de la señal. Esta parte nos permite analizar de manera más intuitiva la distribución de la energía, resaltando qué rangos son más frecuentes en el espectro.
+```
+## c.iv) Histograma de frecuencias en fucsia
+plt.figure(figsize=(8,4))
+plt.hist(freqs, bins=50, weights=PSD_norm, color='#FF00FF')
+plt.title("Histograma de Frecuencias (ponderado por PSD)")
+plt.xlabel("Frecuencia [Hz]")
+plt.ylabel("Probabilidad")
+plt.grid()
+plt.show()
+```
 
 
 
