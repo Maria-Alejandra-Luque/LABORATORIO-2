@@ -282,7 +282,7 @@ plt.show()
    ## ADQUISICIÓN DE LA SEÑAL
    La señal la adquirimos utilizando el sistema de adquisición de datos (DAQ), configurado con una frecuencia de muestreo de 400 Hz para asegurar una correcta digitalización. Para esto usamos el entorno de programación Spyder, desde donde establecimos la conexión con el dispositivo, al capturar los valores de voltaje en función del tiempo y se guaradaron en un archivo .csv. Este archivo contiene dos columnas: Tiempo (s) y Voltaje (V), que fueron la base para realizar el posterior procesamiento digital de la señal.
    # CÓDIGO
-   En la primera parte del código correspondió a la caracterización de la señal en el dominio del tiempo. Para ello cargué directamente el archivo .csv obtenido con el DAQ y realicé su representación gráfica, lo que me permitió identificar de manera preliminar las oscilaciones y el comportamiento dinámico del voltaje. Esta etapa fue clave, ya que ofreció una primera visión general de la señal antes de aplicar los análisis espectrales y estadísticos. 
+   En la primera parte del código correspondió a la caracterización de la señal en el dominio del tiempo. Para esto se cargo directamente el archivo .csv obtenido con el DAQ y realizamos su representación gráfica, lo que nos permitió identificar de manera inicial las oscilaciones y el comportamiento dinámico del voltaje. 
  ```
      ### CARACTERIZACION DE LA SEÑAL
 
@@ -305,11 +305,11 @@ plt.grid()
 plt.show()
 ```
    ## GRÁFICA 
-Al obtener los datos se hizo la  graficación de la señal en el dominio del tiempo, representando el tiempo en el eje horizontal y el voltaje en el eje vertical. La curva fue visualizada en color azul pastel, lo que permitió observar de manera clara las oscilaciones, amplitud y comportamiento general de la señal digitalizada.
+Al obtener los datos se hizo la gráfica de la señal en el dominio del tiempo, representando el tiempo en el eje horizontal y el voltaje en el eje vertical. La curva fue visualizada, lo que permitió observar de manera clara las oscilaciones, amplitud y comportamiento general de la señal digitalizada.
 
 <img width="749" height="731" alt="image" src="https://github.com/user-attachments/assets/32d9f134-f821-4744-8a7d-b9dcff4a95fe" /><br>
   # CARACTERIZACIÓN TEMPORAL 
-En esta parte del código se cargó la señal desde el archivo .csv, se extrajeron las columnas de tiempo y voltaje y se verificó la correcta lectura de los datos con head() y columns. Posteriormente, la señal fue representada en el dominio temporal mediante una gráfica en color fucsia, lo que permitió observar su comportamiento inicial y confirmar que estaba lista para los análisis posteriores.
+En esta parte del código se cargó la señal desde el archivo .csv, se extrajeron las columnas de tiempo y voltaje y se verificó la correcta lectura de los datos con head() y columns. Posteriormente, la señal fue representada en el dominio temporal mediante una gráfica, lo que permitió observar su comportamiento inicial y confirmar que estaba lista para los análisis posteriores.
  ```
 import pandas as pd
 import numpy as np
@@ -333,7 +333,7 @@ plt.grid()
 plt.show()
 ```
 ## FRECUENCIA DE MUESTREO 
-En esta sección también se calculó la frecuencia de muestreo a partir de la diferencia entre dos muestras consecutivas de tiempo. Esto es esencial ya que permitió conocer con precisión la tasa a la cual fue digitalizada la señal, información necesaria para aplicar correctamente la Transformada de Fourier y realizar el análisis en el dominio de la frecuencia.
+En esta sección también se calculó la frecuencia de muestreo a partir de la diferencia entre dos muestras consecutivas de tiempo. Esto es esencial ya que permitió conocer con precisión la tasa a la cual fue digitalizada la señal, necesaria para aplicar correctamente la Transformada de Fourier y realizar el análisis en el dominio de la frecuencia.
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -381,7 +381,7 @@ plt.show()
 <img width="747" height="341" alt="image" src="https://github.com/user-attachments/assets/9a4620c0-dfab-4b13-b407-bd253386a2be" />
 
 # Densidad espectral de potencia
-La densidad espectral de potencia (PSD) fue calculada a partir de la transformada de Fourier, con el fin de conocer cómo se distribuye la potencia de la señal entre las distintas frecuencias. Este análisis permite observar en qué rango se concentra la mayor energía de la señal, lo cual resulta esencial en aplicaciones de filtrado o caracterización espectral.
+La densidad espectral de potencia (PSD) fue calculada a partir de la transformada de Fourier, con el fin de conocer cómo se distribuye la potencia de la señal entre las distintas frecuencias. Este análisis permite observar en qué rango se concentra la mayor energía de la señal, lo cual es esencial en aplicaciones de filtrado o caracterización espectral.
 ```
 # Desidad espectral de potencia
 PSD = (1/(fs*N)) * (np.abs(X)**2)
@@ -399,7 +399,7 @@ plt.show()
 <img width="749" height="344" alt="image" src="https://github.com/user-attachments/assets/e310b848-7b4e-4301-9924-ee9923670335" />
 
 # HISTOGRAMA DE FRECUENCIA
-A partir de la normalización de la PSD se construyó un histograma de frecuencias, el cual muestra la probabilidad de aparición de los distintos componentes espectrales de la señal. Esta parte nos permite analizar de manera más intuitiva la distribución de la energía, resaltando qué rangos son más frecuentes en el espectro.
+A partir de la normalización de la PSD se construyó un histograma de frecuencias, el cual muestra la probabilidad de aparición de los distintos componentes espectrales de la señal. Esto nos permite analizar de manera más intuitiva la distribución de la energía, resaltando rangos son más frecuentes en el espectro.
 ```
 ## c.iv) Histograma de frecuencias en fucsia
 plt.figure(figsize=(8,4))
@@ -413,7 +413,10 @@ plt.show()
 <img width="738" height="422" alt="image" src="https://github.com/user-attachments/assets/c4e6a2dd-4976-4a09-98d9-982964ed2e3a" />
 
 # ESTADÍSTICOS EN EL DOMINIO DE LA FRECUENCIA 
-Finalmente, se calcularon algunos parámetros estadísticos que describen el comportamiento espectral de la señal. La frecuencia media corresponde al centro de gravedad de la distribución espectral, la frecuencia mediana indica el punto donde el espectro se divide en dos partes iguales de energía, y la desviación estándar mide la dispersión de las frecuencias alrededor de la media.
+Finalmente, se calcularon algunos parámetros estadísticos que describen el comportamiento espectral de la señal.
+La frecuencia media: Centro de gravedad de la distribución espectral
+La frecuencia mediana: El punto donde el espectro se divide en dos partes iguales de energía
+La desviación estándar: La dispersión de las frecuencias alrededor de la media
 ```
 #Cálculos de estadísticos
 f_mean = np.sum(freqs * PSD_norm)
