@@ -279,6 +279,32 @@ plt.show()
    Al analizar las gráficas de la correlación se observa que el coseno y el seno no son iguales, pero sí tienen una relación clara cuando una señal se desplaza respecto a la otra. El pico más grande aparece en el lag 2 y con valor negativo, lo que confirma que están desfasadas. En la gráfica normalizada se ve mejor esta relación porque los valores están entre -1 y 1. En conclusión, la correlación nos permitió entender que aunque las señales no coinciden directamente, sí guardan una similitud marcada por el desfase que tienen. <br>
    # PARTE C
    Por ultimo el objetivo de la parte C es caracterizar una señal digitalizada tanto en el dominio del tiempo como en el de la frecuencia, aplicando técnicas de procesamiento digital de señales (DSP). El análisis temporal permite observar la forma de onda y su comportamiento dinámico, mientras que el análisis frecuencial permite identificar los componentes espectrales y la distribución de energía de la señal.
+   ## ADQUISICIÓN DE LA SEÑAL
+   La señal la adquirimos utilizando el sistema de adquisición de datos (DAQ), configurado con una frecuencia de muestreo de 400 Hz para asegurar una correcta digitalización. Para esto usamos el entorno de programación Spyder, desde donde establecimos la conexión con el dispositivo, al capturar los valores de voltaje en función del tiempo y se guaradaron en un archivo .csv. Este archivo contiene dos columnas: Tiempo (s) y Voltaje (V), que fueron la base para realizar el posterior procesamiento digital de la señal.
+   # CÓDIGO
+   En la primera parte del código correspondió a la caracterización de la señal en el dominio del tiempo. Para ello cargué directamente el archivo .csv obtenido con el DAQ y realicé su representación gráfica, lo que me permitió identificar de manera preliminar las oscilaciones y el comportamiento dinámico del voltaje. Esta etapa fue clave, ya que ofreció una primera visión general de la señal antes de aplicar los análisis espectrales y estadísticos.
+   ```
+     ### CARACTERIZACION DE LA SEÑAL
+
+import pandas as pd
+import numpy as np           # para usar np.mean, np.median...
+import matplotlib.pyplot as plt
+
+# si está separado por comas
+df = pd.read_csv("/content/drive/MyDrive/senal_daq_400fm.csv", sep=",")
+
+print(df.head())      # muestra las primeras filas
+print(df.columns)     # muestra los nombres de columnas
+
+# Graficar en azul pastel
+plt.plot(df['Tiempo (s)'], df['Voltaje (V)'], color='#AEC6CF')  # 🔹 azul pastel
+plt.title("Señal digitalizada ")
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Voltaje (V)")
+plt.grid()
+plt.show()
+´´´
+
    
    
    
