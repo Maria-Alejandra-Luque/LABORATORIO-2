@@ -11,17 +11,17 @@ Además, con ayuda del generador se señales obtuvimos una señal biológica, la
 En esta sección realizamos la convolución entre una señal formada con los dígitos de la cédula de cada estudiante, y un sistema definido a partir de los dígitos de código universitarios.<br>
  <img width="380" height="287" alt="image" src="https://github.com/user-attachments/assets/b142d1b2-1d55-45f4-b9c7-4abe2252843c" /> <br>
 
-1. primero se realizo la convolución de manera manual, con los metodos aprendidos en la clase teorica.<br>
+1. Primero se realizo la convolución de manera manual, con los metodos aprendidos en la clase teórica.<br>
 2.	Luego se representó gráficamente la señal obtenida de forma manual.<br>
 3. Posteriormente, se programó la convolución en Python, verificando que el resultado coincidiera con el cálculo manual y se generaron las gráficas en Python para comparar y confirmar los resultados.<br>
 ### Manuela Mancera Herrera
-Codigo= 5600874<br>
+Código= 5600874<br>
 Cedula=1014187867 <br>
 
 1.Convolución Manual <br>
   <img width="361" height="352" alt="image" src="https://github.com/user-attachments/assets/aeb78253-ce68-40e2-bd6e-6402411d470d" /><br>
 
-2.Grafica Manual<br>
+2.Gráfica Manual<br>
     <img width="283" height="348" alt="image" src="https://github.com/user-attachments/assets/76bc5b58-999e-426f-adad-e50666822c93" /> <br>
 
 3. Phyton<br>
@@ -47,7 +47,7 @@ markerline, stemlines, baseline = plt.stem(n, y)
 ```
  <br><br>
 
-   este código calcula la convolución entre una señal de entrada (cedula) y un sistema (Codigo), imprime el resultado y lo grafica como señal discreta tipo stem. <br>
+ Este código calcula la convolución entre una señal de entrada (cedula) y un sistema (Codigo), imprime el resultado y lo grafica como señal discreta tipo stem. <br>
    
    ```
    Cambiamos los colores
@@ -66,15 +66,15 @@ for i, val in enumerate(y):
     print(f"n={i}, y[{i}]={val}")
   ```
    
-   este bloque permite personalizar la gráfica (colores, título, ejes, cuadrícula) y genera una tabla con los valores de la señal resultante.<br>
+   Este bloque permite personalizar la gráfica (colores, título, ejes, cuadrícula) y genera una tabla con los valores de la señal resultante.<br>
    
    <img width="523" height="239" alt="image" src="https://github.com/user-attachments/assets/16c5497f-962d-4e46-aeb7-fcd1f08d5e7b" /> <br>
    <img width="86" height="170" alt="image" src="https://github.com/user-attachments/assets/ec5c37d0-58c7-4516-abde-6345429311c9" /><br>
    Aca obtenemos nuestra señal convolucionada y la grafica, donde podemos confirmar que son identicas, es decir los calculos manuales son correctos. <br>
 
    ## Alejandra Martinez Luque
-   Codigo=5600854 <br>
-   Cedula= 1078367229<br>
+   Código=5600854 <br>
+   Cédula= 1078367229<br>
 
    1.Convolución Manual <br>
   <img width="224" height="280" alt="image" src="https://github.com/user-attachments/assets/99085e2b-4711-4186-908f-85f379b58684" /> <br>
@@ -121,12 +121,12 @@ for i, val in enumerate(y):
    <img width="94" height="173" alt="image" src="https://github.com/user-attachments/assets/9cc8a3f2-8b3a-4cd6-a21d-9c859db84cb4" /> <br>
 
 ## Valentina Gomez Fandiño
-codigo=5600867<br>
-Cedula= 1007467467<br>
+Código=5600867<br>
+Cédula= 1007467467<br>
    1.Convolución Manual <br>
    
    <img width="215" height="269" alt="image" src="https://github.com/user-attachments/assets/bf628c23-2bd7-431c-bc21-0fa2cbbbcdbd" /> <br>
-   2.Grafica Manual<br>
+   2.Gráfica Manual<br>
    
    <img width="278" height="391" alt="image" src="https://github.com/user-attachments/assets/a494a268-42b8-4c5c-9a75-5d5d3296f3fe" /><br>
    
@@ -173,7 +173,7 @@ for i, val in enumerate(y):
    En la Parte B de la práctica utilizamos dos señales periódicas, un coseno y un seno, para comprender cómo funciona la correlación cruzada. Esta operación nos ayuda a comparar dos señales y ver qué tanta similitud tiene o cómo se relacionan entre sí.<br> 
    <img width="437" height="323" alt="image" src="https://github.com/user-attachments/assets/40ca7ee7-a36a-4d19-bc51-cb5f1d229fab" /> <br>
 
-   ### Codigo
+   ### Código
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -192,7 +192,7 @@ print("x1 =", np.round(x1,4).tolist())
 print("x2 =", np.round(x2,4).tolist())
 ```
 <br>
-   este bloque define las señales de entrada (coseno y seno), las evalúa en los primeros 9 puntos y muestra sus valores.<br>
+   Este bloque define las señales de entrada (coseno y seno), las evalúa en los primeros 9 puntos y muestra sus valores.<br>
  
    ```
     Paso 3: Calcular correlación cruzada
