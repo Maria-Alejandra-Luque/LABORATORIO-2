@@ -281,7 +281,7 @@ plt.show()
    Por ultimo el objetivo de la parte C es caracterizar una señal digitalizada tanto en el dominio del tiempo como en el de la frecuencia, aplicando técnicas de procesamiento digital de señales (DSP). El análisis temporal permite observar la forma de onda y su comportamiento dinámico, mientras que el análisis frecuencial permite identificar los componentes espectrales y la distribución de energía de la señal.
    ## ADQUISICIÓN DE LA SEÑAL
    La señal la adquirimos utilizando el sistema de adquisición de datos (DAQ), configurado con una frecuencia de muestreo de 400 Hz para asegurar una correcta digitalización. Para esto usamos el entorno de programación Spyder, desde donde establecimos la conexión con el dispositivo, al capturar los valores de voltaje en función del tiempo y se guaradaron en un archivo .csv. Este archivo contiene dos columnas: Tiempo (s) y Voltaje (V), que fueron la base para realizar el posterior procesamiento digital de la señal.
-   # CÓDIGO
+   ## CÓDIGO
    En la primera parte del código correspondió a la caracterización de la señal en el dominio del tiempo. Para esto se cargo directamente el archivo .csv obtenido con el DAQ y realizamos su representación gráfica, lo que nos permitió identificar de manera inicial las oscilaciones y el comportamiento dinámico del voltaje. 
  ```
      ### CARACTERIZACION DE LA SEÑAL
