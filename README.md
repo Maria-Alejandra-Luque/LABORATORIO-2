@@ -411,6 +411,7 @@ plt.grid()
 plt.show()
 ```
 <img width="738" height="422" alt="image" src="https://github.com/user-attachments/assets/c4e6a2dd-4976-4a09-98d9-982964ed2e3a" />
+
 # ESTADÍSTICOS EN EL DOMINIO DE LA FRECUENCIA 
 Finalmente, se calcularon algunos parámetros estadísticos que describen el comportamiento espectral de la señal. La frecuencia media corresponde al centro de gravedad de la distribución espectral, la frecuencia mediana indica el punto donde el espectro se divide en dos partes iguales de energía, y la desviación estándar mide la dispersión de las frecuencias alrededor de la media.
 ```
