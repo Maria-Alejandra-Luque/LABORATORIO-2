@@ -343,6 +343,9 @@ dt = t[1] - t[0]   # diferencia entre muestras
 fs = 1 / dt        # frecuencia de muestreo
 N = len(x)         # número de muestras
 ```
+ ## GRÁFICA 
+ <img width="752" height="724" alt="image" src="https://github.com/user-attachments/assets/f344e521-6a8f-45c0-ba4b-a09506511935" />
+
  # TRANSFORMADA DE FOURIER
  Posteriormente, se aplicó la Transformada Rápida de Fourier (FFT) con el fin de pasar la señal del dominio del tiempo al dominio de la frecuencia. Este procedimiento permite identificar los componentes espectrales que conforman la señal y reconocer qué frecuencias predominan en ella. En este caso, el espectro de magnitud reveló los picos correspondientes a las frecuencias más significativas.
 ```
@@ -375,6 +378,8 @@ plt.ylabel("Amplitud [V]")
 plt.grid()
 plt.show()
 ```
+<img width="747" height="341" alt="image" src="https://github.com/user-attachments/assets/9a4620c0-dfab-4b13-b407-bd253386a2be" />
+
 # Densidad espectral de potencia
 La densidad espectral de potencia (PSD) fue calculada a partir de la transformada de Fourier, con el fin de conocer cómo se distribuye la potencia de la señal entre las distintas frecuencias. Este análisis permite observar en qué rango se concentra la mayor energía de la señal, lo cual resulta esencial en aplicaciones de filtrado o caracterización espectral.
 ```
@@ -391,6 +396,8 @@ plt.ylabel("PSD [V^2/Hz]")
 plt.grid()
 plt.show()
 ```
+<img width="749" height="344" alt="image" src="https://github.com/user-attachments/assets/e310b848-7b4e-4301-9924-ee9923670335" />
+
 # HISTOGRAMA DE FRECUENCIA
 A partir de la normalización de la PSD se construyó un histograma de frecuencias, el cual muestra la probabilidad de aparición de los distintos componentes espectrales de la señal. Esta parte nos permite analizar de manera más intuitiva la distribución de la energía, resaltando qué rangos son más frecuentes en el espectro.
 ```
@@ -403,6 +410,24 @@ plt.ylabel("Probabilidad")
 plt.grid()
 plt.show()
 ```
+<img width="738" height="422" alt="image" src="https://github.com/user-attachments/assets/c4e6a2dd-4976-4a09-98d9-982964ed2e3a" />
+# ESTADÍSTICOS EN EL DOMINIO DE LA FRECUENCIA 
+Finalmente, se calcularon algunos parámetros estadísticos que describen el comportamiento espectral de la señal. La frecuencia media corresponde al centro de gravedad de la distribución espectral, la frecuencia mediana indica el punto donde el espectro se divide en dos partes iguales de energía, y la desviación estándar mide la dispersión de las frecuencias alrededor de la media.
+```
+#Cálculos de estadísticos
+f_mean = np.sum(freqs * PSD_norm)
+f_median = freqs[np.cumsum(PSD_norm) >= 0.5][0]
+f_std = np.sqrt(np.sum(((freqs - f_mean)**2) * PSD_norm))
+
+# 7. Imprimir resultados estadísticos
+print("📊 Estadísticos en el dominio de la frecuencia:")
+print(f"Frecuencia media: {f_mean:.2f} Hz")
+print(f"Frecuencia mediana: {f_median:.2f} Hz")
+print(f"Desviación estándar: {f_std:.2f} Hz")
+```
+## Resultados obtenidos 
+<img width="501" height="100" alt="image" src="https://github.com/user-attachments/assets/e7124aad-b896-4875-b917-874b85caa324" />
+
 
 
 
