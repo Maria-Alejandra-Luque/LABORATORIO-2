@@ -378,9 +378,10 @@ plt.ylabel("Amplitud [V]")
 plt.grid()
 plt.show()
 ```
+ ## GRÁFICA 
 <img width="747" height="341" alt="image" src="https://github.com/user-attachments/assets/9a4620c0-dfab-4b13-b407-bd253386a2be" />
 
-# Densidad espectral de potencia
+# DENSIDAD ESPECTRAL DE POTENCIA
 La densidad espectral de potencia (PSD) fue calculada a partir de la transformada de Fourier, con el fin de conocer cómo se distribuye la potencia de la señal entre las distintas frecuencias. Este análisis permite observar en qué rango se concentra la mayor energía de la señal, lo cual es esencial en aplicaciones de filtrado o caracterización espectral.
 ```
 # Desidad espectral de potencia
@@ -396,6 +397,7 @@ plt.ylabel("PSD [V^2/Hz]")
 plt.grid()
 plt.show()
 ```
+ ## GRÁFICA 
 <img width="749" height="344" alt="image" src="https://github.com/user-attachments/assets/e310b848-7b4e-4301-9924-ee9923670335" />
 
 # HISTOGRAMA DE FRECUENCIA
@@ -410,6 +412,7 @@ plt.ylabel("Probabilidad")
 plt.grid()
 plt.show()
 ```
+ ## GRÁFICA 
 <img width="738" height="422" alt="image" src="https://github.com/user-attachments/assets/c4e6a2dd-4976-4a09-98d9-982964ed2e3a" />
 
 # ESTADÍSTICOS EN EL DOMINIO DE LA FRECUENCIA 
