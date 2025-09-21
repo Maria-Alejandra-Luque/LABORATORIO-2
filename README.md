@@ -283,7 +283,7 @@ plt.show()
    La señal la adquirimos utilizando el sistema de adquisición de datos (DAQ), configurado con una frecuencia de muestreo de 400 Hz para asegurar una correcta digitalización. Para esto usamos el entorno de programación Spyder, desde donde establecimos la conexión con el dispositivo, al capturar los valores de voltaje en función del tiempo y se guaradaron en un archivo .csv. Este archivo contiene dos columnas: Tiempo (s) y Voltaje (V), que fueron la base para realizar el posterior procesamiento digital de la señal.
    # CÓDIGO
    En la primera parte del código correspondió a la caracterización de la señal en el dominio del tiempo. Para ello cargué directamente el archivo .csv obtenido con el DAQ y realicé su representación gráfica, lo que me permitió identificar de manera preliminar las oscilaciones y el comportamiento dinámico del voltaje. Esta etapa fue clave, ya que ofreció una primera visión general de la señal antes de aplicar los análisis espectrales y estadísticos. 
-```
+ ```
      ### CARACTERIZACION DE LA SEÑAL
 
 import pandas as pd
@@ -303,8 +303,8 @@ plt.xlabel("Tiempo (s)")
 plt.ylabel("Voltaje (V)")
 plt.grid()
 plt.show()
-´´´
-    ## GRÁFICA 
+```
+   ## GRÁFICA 
 Al obtener los datos se hizo la  graficación de la señal en el dominio del tiempo, representando el tiempo en el eje horizontal y el voltaje en el eje vertical. La curva fue visualizada en color azul pastel, lo que permitió observar de manera clara las oscilaciones, amplitud y comportamiento general de la señal digitalizada.
 <img width="749" height="731" alt="image" src="https://github.com/user-attachments/assets/32d9f134-f821-4744-8a7d-b9dcff4a95fe" />
 
