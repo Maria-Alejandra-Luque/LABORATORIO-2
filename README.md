@@ -306,7 +306,8 @@ plt.show()
 ```
    ## GRÁFICA 
 Al obtener los datos se hizo la  graficación de la señal en el dominio del tiempo, representando el tiempo en el eje horizontal y el voltaje en el eje vertical. La curva fue visualizada en color azul pastel, lo que permitió observar de manera clara las oscilaciones, amplitud y comportamiento general de la señal digitalizada.
-<img width="749" height="731" alt="image" src="https://github.com/user-attachments/assets/32d9f134-f821-4744-8a7d-b9dcff4a95fe" />
+
+<img width="749" height="731" alt="image" src="https://github.com/user-attachments/assets/32d9f134-f821-4744-8a7d-b9dcff4a95fe" /><br>
 
 
 
