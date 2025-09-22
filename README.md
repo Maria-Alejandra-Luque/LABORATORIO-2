@@ -1,4 +1,4 @@
-Codigo :https://colab.research.google.com/drive/1DL1DXChiE5t4KtSDhACU42GRzzz_fLNJ?usp=sharing
+Link del código :https://colab.research.google.com/drive/1DL1DXChiE5t4KtSDhACU42GRzzz_fLNJ?usp=sharing
 # PROCESAMIENTO DIGITAL DE SEÑALES
 # DESCRIPCIÓN
 En este repositorio encontraremos el analisis de la practica 2, donde se realizó la convolución, la correlación y la Transformada de Fourier para trabajar con diferentes señales. Inicialmente se desarrolló el ejercicio de manera manual y luego se trabajó en Python para entender cómo se comportan las señales cuando pasan por un sistema.  <br>
