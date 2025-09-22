@@ -16,7 +16,7 @@ En esta sección realizamos la convolución entre una señal formada con los dí
 3. Posteriormente, se programó la convolución en Python, verificando que el resultado coincidiera con el cálculo manual y se generaron las gráficas en Python para comparar y confirmar los resultados.<br>
 ### Manuela Mancera Herrera
 Código= 5600874<br>
-Cedula=1014187867 <br>
+Cédula=1014187867 <br>
 
 1.Convolución Manual <br>
   <img width="361" height="352" alt="image" src="https://github.com/user-attachments/assets/aeb78253-ce68-40e2-bd6e-6402411d470d" /><br>
@@ -79,7 +79,7 @@ for i, val in enumerate(y):
    1.Convolución Manual <br>
   <img width="224" height="280" alt="image" src="https://github.com/user-attachments/assets/99085e2b-4711-4186-908f-85f379b58684" /> <br>
 
-   2.Grafica Manual<br>
+   2.Gráfica Manual<br>
    <img width="272" height="351" alt="image" src="https://github.com/user-attachments/assets/e0b83d80-4f06-4b7e-b13b-73cf8b1e720a" /><br>
 
    3. Phyton<br>
