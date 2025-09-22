@@ -1,14 +1,16 @@
 Codigo :https://colab.research.google.com/drive/1DL1DXChiE5t4KtSDhACU42GRzzz_fLNJ?usp=sharing
 # PROCESAMIENTO DIGITAL DE SEÑALES
-# OBJETIVOS
-- Comprender la convolución como una operación que permite obtener la respuesta de un sistema discreto ante una entrada determinada.
-- Analizar la correlación como medida de similitud entre dos señales.
-- Aplicar la Transformada de Fourier como herramienta de análisis en el dominio de la frecuencia. 
 # DESCRIPCIÓN
 En este repositorio encontraremos el analisis de la practica 2, donde se realizó la convolución, la correlación y la Transformada de Fourier para trabajar con diferentes señales. Inicialmente se desarrolló el ejercicio de manera manual y luego se trabajó en Python para entender cómo se comportan las señales cuando pasan por un sistema.  <br>
 
 Además, con ayuda del generador se señales obtuvimos una señal biológica, la digitalizamos y analizamos sus comportamiento en el tiempo como en la frecuencia. Con el objetivo de observar de una manera más clara cómo se pueden comparar señales y también como cambia su información al analizarlas en otro dominio. Esta práctica permitió integrar la teoría y la programación y entender cómo se procesan y analizan señales tanto en el tiempo como en la frecuencia.
- 
+
+# OBJETIVOS
+- Comprender la convolución como una operación que permite obtener la respuesta de un sistema discreto ante una entrada determinada.
+- Analizar la correlación como medida de similitud entre dos señales.
+- Aplicar la Transformada de Fourier como herramienta de análisis en el dominio de la frecuencia.
+  
+# PROCEDIMIENTO
 # PARTE A
 ## Convolución de Señales 
 En esta sección realizamos la convolución entre una señal formada con los dígitos de la cédula de cada estudiante, y un sistema definido a partir de los dígitos de código universitarios.<br>
